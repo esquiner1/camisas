@@ -1,0 +1,261 @@
+:root{
+    --primario: #9c27b0;
+    --primarioOscuro: #89119d;
+    --secundarioOscuro: #ffce00;
+    --secundario: rgb(283,287,2);
+    --blanco: #fff;
+    --negro: #000;
+
+    --fuentePrincipal: 'Staatliches', cursive;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  /**GLOBALES**/
+
+  body{
+      background-color: var(--primario);
+      font-size: 1.6rem;
+      line-height: 1.5rem;
+  }
+
+  p{
+      font-size: 1.8rem;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--blanco);
+  }
+
+  a{
+      text-decoration: none;
+  }
+
+  img{
+      width: 100%;
+  }
+
+ 
+
+  .contenedor{
+      max-width: 120rem;
+      margin: 0 auto; /*esto es para centrarlo*/
+  }
+
+  h1, h2, h3{
+      text-align: center;
+      color: var(--secundario);
+      font-family: var(--fuentePrincipal);
+  }
+
+  h1 {font-size: 4rem;}
+  h2{font-size:3.2rem;}
+  h3{font-size: 2.4rem;}
+
+  /**HEADER**/
+  .header{
+    display: flex;
+    justify-content: center;
+  }
+.header__logo{
+    margin: 3rem 0;
+}
+/**FOOTER**/
+
+.footer{
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;/*padding:"arriba" "abajo" "zquierda" "derecha"  o  padding: "arriba abajo" "izquierda derech""*/
+    margin-top: 2rem;
+}
+.footer__texto{
+    font-family: var(--fuentePrincipal);
+    text-align: center;
+    font-size: 2.2rem;
+}
+/**NAVEGACION**/
+
+.navegacion{
+
+    background-color: var(--primarioOscuro);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    /*gap: 2rem;/*este nos separa los elementos que tengamos adentro*/ /*aun no tiene buen soporte asi que utilizaremos el margin*/
+    margin-right: 0rem;
+}
+.navegacion__enlace{
+
+    font-family:var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 3rem;
+    margin-right: 2rem;
+}
+.navegacion__enlace:last-of-type{/*coge el ultimo*/
+    margin-right: 0rem;
+}
+
+.navegacion__enlace--activo, 
+.navegacion__enlace:hover{
+    color: var(--secundario);
+}
+/*GRID*/
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;/*para hacer el cuadrado de fondo*/
+    row-gap: 2rem;
+}
+
+
+@media(min-width:768px){
+   .grid{
+       display:grid;
+       grid-template-columns: repeat(3, 1fr);
+   }
+}
+/*PRODUCTOS*/
+
+.producto{
+    background-color: var(--primarioOscuro);
+    padding: 1rem;
+
+}
+
+
+
+.producto__nombre{
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 3rem;
+    
+}
+.producto__nombre:hover{
+    color: var(--secundario);
+}
+
+.producto__precio{
+    font-size: 2.8rem;
+    text-align: center;
+    color: var(--secundario);
+    line-height: 1.2rem;
+}
+.producto__nombre,
+.producto__precio{
+    font-family: var(--fuentePrincipal);
+}
+
+/*GRAFICOS*/
+
+.grafico{
+    min-height: 30rem;
+    grid-column: 1 / 3;/*Aqui posicionamos una imagen*/
+}
+
+
+.grafico--camisas{
+    grid-row: 2 / 3;
+    background-image: url(../img/grafico1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; /*paque la imagen se llene en el espacio que tiene ys e estire */
+   
+}
+.grafico--node{
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8 / 9;
+    background-repeat: no-repeat;
+    background-size: cover; /*paque la imagen se llene en el espacio que tiene ys e estire */
+}
+
+@media(min-width:768px){
+   .grafico--node{
+    grid-row: 5 / 6;/*coge filas*/
+    grid-column: 2 / 4;/*coge columnas*/
+    }
+}
+                                                /*NOSOTROS*/
+.grid2{
+    display: grid;
+}
+.imagen{
+    grid-row: 1 / 2;   
+}
+@media(min-width:768px){
+   .grid2{
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+   }
+.imagen{
+       grid-column: 2 / 3;
+   }
+   
+}
+                                                        /*ICONOS*/
+.iconos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+@media(min-width:768PX){
+.iconos{
+    margin: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    }
+}
+.bloque__parrafo{
+    text-align: center;
+}
+.bloque{
+    padding: 1rem;
+}
+.bloque__image{
+    width: 100%;
+}
+.bloque__titulo{
+    margin-top: .5rem;
+}
+
+                                /*PAGINA DEL PRODCUTO*/
+@media(min-width:768PX){
+    .productos{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap:2rem;
+}                               
+}
+.formulario{
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+}
+.formulario__campo{
+ /*border-color: var(--primarioOscuro);
+ border-width: 1rem;
+ border-style: solid;*/
+ /*tambien se puede asi*/
+ border: 1rem solid var(--primarioOscuro);
+ background-color: transparent;
+ color: var(--blanco);
+ font-size: 2rem;
+ font-family: Arial, Helvetica, sans-serif;
+ padding: 1rem;
+}
+.formulario__submit{
+    background-color: var(--secundario);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuentePrincipal);
+    padding: 2rem;
+    transition: background-color .3s ease;/*este es para hacer transicion*/
+    transition: font-size .3s ease;
+    grid-column: 1/3;
+    margin-top: 3rem;
+}
+.formulario__submit:hover{
+    font-size: 2.5rem;
+    cursor: pointer;
+    background-color: var(--secundarioOscuro);
+}
